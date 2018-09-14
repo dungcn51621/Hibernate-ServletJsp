@@ -1,5 +1,7 @@
 package main;
 
+import javax.persistence.CascadeType;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -36,8 +38,7 @@ public class MainOneToOne {
 			productDetail.setProduct(newProduct);
 			newProduct.setProductDetail(productDetail);
 			
-			session.save(productDetail);
-			session.save(newProduct);
+			session.save(newProduct); //cascade = CascadeType.ALL auto update id for detail
 			//4. transaction commit
 			tx.commit();
 			
