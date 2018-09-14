@@ -1,0 +1,4 @@
+1. Create missing web.xml 
+	you can do it by Dynamic Web Project –> RightClick –> Java EE Tools –> Generate Deployment Descriptor Stub.
+	
+2. 
