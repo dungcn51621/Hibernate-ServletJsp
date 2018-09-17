@@ -8,22 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
 	<%
-	
 		out.print("Hello Dymanamic web"); //out.print - JSPWriter
-		out.print("out.print - JSPWriter");
-		//
-// 		PrintWriter printWriter = request.get();
-		
-		
+		out.print("out.print -> JSPWriter");
 	%>
-	
 	<ul>
-		<li><a href="${pageContext.request.contextPath}/hello">PrintWriter</a></li>
+		<li><a href="${pageContext.request.contextPath}/hello">Hello Servlet</a></li>
+		<li><a href="${pageContext.request.contextPath}/date">Show date</a></li>
 		<li><a href="#"></a></li>
-		<li><a href="#"></a></li>
-		
 	</ul>
 </body>
 </html>
