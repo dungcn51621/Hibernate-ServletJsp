@@ -20,8 +20,7 @@
 	%>
 	
 	<ul>
-		<li><a href="${pageContext.request.contextPath}/printWriter">PrintWriter</a></li>
-		<li><a href="#"></a></li>
+		<li><a href="${pageContext.request.contextPath}/hello">PrintWriter</a></li>
 		<li><a href="#"></a></li>
 		<li><a href="#"></a></li>
 		
