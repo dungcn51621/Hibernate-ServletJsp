@@ -8,7 +8,6 @@ import javax.servlet.http.*;
 
 
 @WebServlet("/hello")
-
 public class HelloWorld extends HttpServlet {
    public void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
