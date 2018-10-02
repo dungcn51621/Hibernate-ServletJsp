@@ -9,17 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import entities.Product;
 import services.ProductService;
+import services.ProductServiceImpl;
 
 @WebServlet("/formdemo")
 public class ProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	@Autowired
-	ProductService productService;
+	ProductService productService = new ProductServiceImpl();
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
