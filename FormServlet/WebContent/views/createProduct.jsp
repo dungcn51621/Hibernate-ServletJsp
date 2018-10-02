@@ -20,9 +20,14 @@
 		
 		
 		<p>
-			Description: <textarea name="description"></textarea></br>
+			Description: <input name="description"></input></br>
 			<label class="error">${descError}</label>
 		</p>
+		
+		<p>
+			Post for Product: <textarea name="content"></textarea></br>
+		</p>
+		
 		<p>
 			Image: <input name="image" type="file"/></br>
 			<label class="error">${imageError}</label>

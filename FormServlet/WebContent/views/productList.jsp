@@ -1,4 +1,4 @@
-<%@page import="model.Product"%>
+<%@page import="entities.Product"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
@@ -19,18 +19,6 @@
 		</thead>
 		
 		<tbody>
-			
-<%-- 				<% --%>
-<!-- // 					Product newProduct = (Product) request.getAttribute("productList"); -->
-<!-- // 					out.print("<td>" + newProduct.getName() + "</td>"); -->
-<!-- // 				    out.print("<td>" + newProduct.getDescription() + "</td>"); -->
-<!-- // 				    out.print("<td>" + newProduct.getImage() + "</td>"); -->
-<%-- 				%> --%>
-				
-<%-- 	C1.			<td>${newProduct.name}</td> --%>
-<%-- 				<td>${newProduct.description}</td> --%>
-<%-- 				<td>${newProduct.image}</td> --%>
-
 			<c:forEach var="item" items="${productList}" varStatus="status">
 			    <tr>
 					<td>${status.count}.${item.name}</td>
@@ -38,7 +26,6 @@
 					<td>${status.count}.${item.image}</td>
 				</tr>
 			</c:forEach>
-			
 		</tbody>
 	
 	</table>

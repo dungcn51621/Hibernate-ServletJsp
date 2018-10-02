@@ -2,14 +2,14 @@ package model;
 
 import java.io.Serializable;
 
-public class Product implements Serializable {
+public class ProductVO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private String name;
 	private String description;
 	private String image;
 	
-	public Product(String name, String description, String image) {
+	public ProductVO(String name, String description, String image) {
 		super();
 		this.name = name;
 		this.description = description;

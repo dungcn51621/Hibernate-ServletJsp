@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -10,12 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Product;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import entities.Product;
+import services.ProductService;
 
 @WebServlet("/formdemo")
 public class ProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@Autowired
+	ProductService productService;
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getRequestDispatcher("/views/createProduct.jsp").forward(req, resp);
@@ -28,7 +33,11 @@ public class ProductServlet extends HttpServlet {
 		String name = req.getParameter("name");
 		String description = req.getParameter("description");
 		String image = req.getParameter("image");
-		Product product = new Product(name, description, image);
+		Product product = new Product();
+		
+		product.setName(name);
+		product.setDescription(description);
+		product.setImage(image);
 		
 		boolean error = false;
 		// 2. Validate data
@@ -51,13 +60,11 @@ public class ProductServlet extends HttpServlet {
 		// 2.2 Not Error => show data productList.jsp
 		} else {
 			
-			List<Product> productList = new ArrayList<>();
-			productList.add(product);
-			productList.add(product);
-			productList.add(product);
-			productList.add(product);
-			productList.add(product);
-			productList.add(product);
+			//insert product into Product Table => insert into
+			productService.createtProduct(product);
+			
+			// get data from Product Table = >> select 
+			List<Product> productList = productService.getAllProducts();
 			
 			req.setAttribute("productList", productList);
 			req.getRequestDispatcher("/views/productList.jsp").forward(req, resp);

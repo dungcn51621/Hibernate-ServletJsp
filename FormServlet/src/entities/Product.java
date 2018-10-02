@@ -28,6 +28,8 @@ public class Product implements Serializable {
 	@Column(name = "idProduct")
 	private int id;
 	private String name;
+	private String description;
+	private String image;
 
 	@OneToOne(fetch = FetchType.LAZY, mappedBy = "product", cascade = CascadeType.ALL)
 	private ProductDetail productDetail;
@@ -79,6 +81,22 @@ public class Product implements Serializable {
 
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 }
